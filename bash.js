@@ -5,12 +5,18 @@ process.stdout.write('prompt > ');
 process.stdin.on('data', (data) => {
   const cmd = data.toString().trim();
 
-  process.stdout.write('You typed: ' + cmd);
-  process.stoud.write(process.env.pwd)
+  //if statement
+  if (cmd === "pwd") {
+    process.stdout.write(process.cwd())
+  } else {
+    process.stdout.write('You typed: ' + cmd);
+  }
+
+  // process.stdout.write('You typed: ' + cmd);
+  // process.stdout.write(process.cwd())
   process.stdout.write('\nprompt > ');
 
-  if (cmd === 'pwd') {
-    process.env.pwd
-  }
+
+
 })
 
